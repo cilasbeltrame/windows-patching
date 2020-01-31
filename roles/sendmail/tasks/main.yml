@@ -1,0 +1,20 @@
+- name: Checando installed updates and running services
+  win_shell: Get-HotFix
+  register: updates
+
+- name: Server validation
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: email@tests.com
+    secure: try
+    password: Pass
+    subject: Ansible-report
+    body:  "List of patches {{ updates.stdout_lines }}"
+    to:
+    - Cilas Beltrame <cilas.beltrame@atos.net>
+    #attach:
+    #- /etc/group
+    #- /tmp/avatar2.png
+    charset: utf8
+  delegate_to: localhost

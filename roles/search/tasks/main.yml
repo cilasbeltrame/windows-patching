@@ -1,0 +1,9 @@
+- name: Searching all critical and security updates
+  win_updates:
+    server_selection: managed_server
+    category_names:
+    - CriticalUpdates
+    - SecurityUpdates
+    state: searched
+    log_path: C:\ansible_wu.txt
+  register: update_result

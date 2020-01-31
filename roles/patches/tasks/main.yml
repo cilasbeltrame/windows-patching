@@ -1,0 +1,14 @@
+- name: Install all critical and security updates
+  win_updates:
+    ignore_errors: yes
+    server_selection: managed_server
+    category_names:
+    - CriticalUpdates
+    - SecurityUpdates
+    state: installed
+    log_path: C:\ansible_wu.txt
+  register: update_result
+
+- name: Output update_result
+  debug:
+    msg: "{{update_result}}"

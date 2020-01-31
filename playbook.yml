@@ -1,0 +1,12 @@
+- name: Windows updates
+  strategy: free
+  hosts: all
+  gather_facts: true
+  roles:
+    #- app
+    #- db
+    - search
+    - patches
+    - reboot
+    #- sendmail
+    #- validation-services

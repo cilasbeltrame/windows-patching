@@ -1,0 +1,7 @@
+
+
+   - name: Reboot host if required
+  #win_shell: "restart-computer -force"
+     win_reboot:
+       reboot_timeout: 1500
+       post_reboot_delay: 30

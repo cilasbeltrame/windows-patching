@@ -1,0 +1,74 @@
+
+- name: Set service startup mode to auto and ensure it is started
+  win_service:
+    name: "{{item}}"
+    start_mode: auto
+    state: started
+    with_items:
+      - AVP
+      - avpsus
+      - BFE
+      - BrokerInfrastructure
+      - CryptSvc
+      - DcomLaunch
+      - Dhcp
+      - DiagTrack
+      - Dnscache
+      - DPS
+      - EventLog
+      - EventSystem
+      - FontCache
+      - gpsvc
+      - gupdate
+      - IKEEXT
+      - iphlpsvc
+      - IScopeEM
+      - klnagent
+      - LanmanServer
+      - LanmanWorkstation
+      - lmhosts
+      - LSM
+      - MpsSvc
+      - MSDTC
+      - MSSQLSERVER
+      - NetBackup Client Service
+      - NetBackup Discovery Framework
+      - NetBackup Legacy Client Service
+      - NetBackup Legacy Network Service
+      - Netlogon
+      - NlaSvc
+      - nsi
+      - Power
+      - ProfSvc
+      - RemoteRegistry
+      - RpcEptMapper
+      - RpcSs
+      - SamSs
+      - SAPDAA_98
+      - SAPHostExec
+      - SAPS1D_00
+      - SAPS1D_01
+      - SAPS2D_02
+      - SAPS2D_03
+      - SAPWDD_50
+      - Schedule
+      - SENS
+      - ShellHWDetection
+      - SnowInventoryAgent5
+      - Spooler
+      - sppsvc
+      - SQLSERVERAGENT
+      - SQLTELEMETRY
+      - SQLWriter
+      - SystemEventsBroker
+      - Themes
+      - TrkWks
+      - UALSVC
+      - VGAuthService
+      - VMTools
+      - VRTSpbx
+      - Wcmsvc
+      - WerSvc
+      - Winmgmt
+      - WinRM
+      - wuauserv

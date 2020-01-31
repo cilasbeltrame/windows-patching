@@ -1,0 +1,5 @@
+- name: Stop Database Sql
+  hosts: db_servers
+  win_service:
+    name: MSSQLSERVER
+    state: stopped

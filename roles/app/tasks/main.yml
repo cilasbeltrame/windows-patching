@@ -1,0 +1,5 @@
+- name: Stop Web server Apache
+  hosts: web_servers
+  win_service:
+    name: apache
+    state: stopped
