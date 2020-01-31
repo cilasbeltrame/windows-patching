@@ -1,2 +1,0 @@
-win01 ansible_host=161.89.128.168 ansible_connection=winrm ansible_user=administrator ansible_password=Atos@123 ansible_winrm_server_cert_validation=ignore
-win02 ansible_host=161.89.128.169 ansible_connection=winrm ansible_user=administrator ansible_password=Atos@123 ansible_winrm_server_cert_validation=ignore
