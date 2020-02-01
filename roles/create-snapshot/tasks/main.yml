@@ -20,3 +20,7 @@
     snapshot_name: "Snapshot.{{ ansible_date_time.date }}.{{ ansible_date_time.time }}"
     description: Snapshot_Realizado_Pelo_Ansible
   delegate_to: localhost
+- name: Wait Server stabilize 
+  wait_for:
+    timeout: 5
+  delegate_to: localhost   
