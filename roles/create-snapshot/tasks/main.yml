@@ -1,0 +1,22 @@
+- name: Create a snapshot
+  vars:
+    vcenter_ip: "161.89.128.40"
+    vcenter_username: "ansible"
+    vcenter_password: "Atos@2019"
+    datacenter_name: "Atos"
+    folder: "/{{ datacenter_name }}/{{ inventory_hostname }}/"
+
+  vmware_guest_snapshot:
+    hostname: "{{ vcenter_ip }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    datacenter: "{{ datacenter_name }}"
+    name: "{{ inventory_hostname }}"
+    folder: "{{ folder }}"
+    name_match: first
+    memory_dump: false
+    validate_certs: false
+    state: present
+    snapshot_name: "Snapshot.{{ ansible_date_time.date }}.{{ ansible_date_time.time }}"
+    description: Snapshot_Realizado_Pelo_Ansible
+  delegate_to: localhost
