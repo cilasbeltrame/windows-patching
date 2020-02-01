@@ -6,8 +6,8 @@
     - create-snapshot
     #- app
     #- db
-    #- search
-    #- patches
-    #- reboot
+    - search
+    - patches
+    - reboot
     #- sendmail
     #- validation-services
