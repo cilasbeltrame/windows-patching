@@ -1,7 +1,25 @@
 
 
-   - name: Reboot host if required
+   - name: Reboot host if required | Windows Server 2008 R2
+  #win_shell: "restart-computer -force"
+     win_reboot:
+       reboot_timeout: 300
+       post_reboot_delay: 30
+     when: ansible_os_name ==  "Windows Server 2008 R2"
+             or ansible_distribution_version == "6.1.7601"
+
+   - name: Reboot host if required | Windows Server 2016
   #win_shell: "restart-computer -force"
      win_reboot:
        reboot_timeout: 1500
        post_reboot_delay: 30
+     when: ansible_os_name ==  "Microsoft Windows Server 2016 Standard"
+            or ansible_distribution_version == "10.1"
+
+   - name: Reboot host if required | Windows Server 2012
+  #win_shell: "restart-computer -force"
+     win_reboot:
+       reboot_timeout: 600
+       post_reboot_delay: 30
+     when: ansible_os_name ==  "Microsoft Windows Server 2012 R2 Standard"
+            or ansible_distribution_version == "6.3.9600.0"
